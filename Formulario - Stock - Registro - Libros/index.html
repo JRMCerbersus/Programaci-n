@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Libros - Biblioteca - Stock de Libros</title>
+    <link rel="stylesheet" href="Estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Stock de Libros</h1>
+        <form id="registro-libros">
+            <div class="form-group">
+                <label for="ID_Libro">ID_Libro</label>
+                <input type="number" id="ID_Libro" name="ID_Libro" placeholder="Ingrese el ID" onblur="verificar('ID_Libro')">
+                <div id="e-ID_Libro"></div>
+            </div>
+            <div class="form-group">
+                <label for="nombre-libro">Nombre del Libro</label>
+                <input type="text" id="nombre-libro" name="nombre-libro" placeholder="Ingrese el nombre del libro" onblur="verificar('nombre-libro')">
+                <div id="e-nombre-libro"></div>
+            </div>
+            <div class="form-group">
+                <label for="nombre-autor">Nombre del Autor</label>
+                <input type="text" id="nombre-autor" name="nombre-autor" placeholder="Ingrese el nombre del autor" onblur="verificar('nombre-autor')">
+                <div id="e-nombre-autor"></div>
+            </div>
+            <div class="form-group">
+                <label for="fecha-emision">Fecha de Emisión</label>
+                <input type="date" id="fecha-emision" name="fecha-emision" onblur="verificar('fecha-emision')">
+                <div id="e-fecha-emision"></div>
+            </div>
+            <div class="form-group">
+                <label for="valor-libro">Valor del Libro</label>
+                <input type="number" id="valor-libro" name="valor-libro" placeholder="Ingrese el valor del libro" onblur="verificar('valor-libro')">
+                <div id="e-valor-libro"></div>
+            </div>
+            <div class="form-group">
+                <label for="Formato-libro">Formato</label>
+                <input type="text" id="Formato-libro" name="Formato-libro" placeholder="Ingrese el formato del libro" onblur="verificar('Formato-libro')">
+                <div id="e-Formato-libro"></div>
+            </div>
+            <div class="form-group">
+                <label for="genero-libro">Genero Literario</label>
+                <input type="text" id="genero-libro" name="genero-libro" placeholder="Tipo de género literario al que pertenece el libro" onblur="verificar('genero-libro')">
+                <div id="e-genero-libro"></div>
+            </div>
+            <button type="submit" id="guardar-libro">Guardar Libro</button>
+            <button type="button" onclick="limpiar()">Limpiar Casillas</button>
+        </form>
+        <h2>Libros Registrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID del libro</th>
+                    <th>Nombre del Libro</th>
+                    <th>Nombre del Autor</th>
+                    <th>Fecha de Emisión</th>
+                    <th>Valor del Libro</th>
+                    <th>Formato</th>
+                    <th>Genero Literario</th>
+                </tr>
+            </thead>
+            <tbody id="contenido"></tbody>
+        </table>
+    </div>
+    <script src="Utilidad.js" type="module"></script>
+    <script src="Firebase.js" type="module"></script>
+    <script src="Funciones.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
